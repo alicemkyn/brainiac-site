@@ -1644,7 +1644,7 @@ export default function App() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-4 mb-12">
             <ResourceCard icon={Github} title="Code" description="Preprocessing pipelines, training scripts, inference utilities. All open source." href="https://github.com/AIM-KannLab/BrainIAC" primary />
             <ResourceCard icon={Globe} title="Platform" description="Upload a brain MRI, run BrainIAC and all seven downstream models in your browser." href="https://www.brainiac-platform.com/" />
-            <ResourceCard icon={Download} title="Weights" description="Pretrained ViT-B backbone and task-specific heads, ready for finetuning." href="https://github.com/AIM-KannLab/BrainIAC" />
+            <ResourceCard icon={Download} title="Weights" description="Pretrained ViT-B backbone and task-specific heads, ready for finetuning." href="https://www.dropbox.com/scl/fo/i51xt63roognvt7vuslbl/AG99uZljziHss5zJz4HiFis?rlkey=9w55le6tslwxlfz6c0viylmjb&dl=1" />
             <ResourceCard icon={FileText} title="Paper" description="Full methods, supplementary material, and all 35 reporting tables." href="https://doi.org/10.1038/s41593-026-02202-6" />
             <ResourceCard icon={Table} title="Supp. Tables" description="35 supplementary data tables with all bootstrap CIs, P-values, and per-dataset statistics." href="https://static-content.springer.com/esm/art%3A10.1038%2Fs41593-026-02202-6/MediaObjects/41593_2026_2202_MOESM1_ESM.pdf" />
             <ResourceCard icon={Database} title="Datasets" description="Links, DOIs, and access protocols for every one of the 36 source datasets." href="https://github.com/AIM-KannLab/BrainIAC" />
