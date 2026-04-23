@@ -575,8 +575,8 @@ function BrainLogo({ size = 32 }) {
     <svg width={size} height={size} viewBox="0 0 64 64" fill="none" aria-hidden="true">
       <defs>
         <linearGradient id="brainGrad" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0%" stopColor="#2dd4bf" />
-          <stop offset="100%" stopColor="#0891b2" />
+          <stop offset="0%" stopColor="#ffffff" />
+          <stop offset="100%" stopColor="#ffffff" />
         </linearGradient>
       </defs>
       <circle cx="32" cy="32" r="30" stroke="url(#brainGrad)" strokeWidth="1.5" fill="none" opacity="0.5" />
