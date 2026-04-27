@@ -7,6 +7,7 @@ import {
   ArrowUpRight, Github, FileText, Download, Copy, Check,
   Layers, Shield, Database, Zap, Quote, X, Maximize2, Eye, Globe, Table, ChevronRight,
 } from 'lucide-react';
+import PreprocessingDemo from './PreprocessingDemo';
 
 // ============ DATA ============
 
@@ -1378,6 +1379,7 @@ export default function App() {
             <a href="#saliency" style={{ color: '#8b94a3' }} className="hover:text-white transition-colors">Saliency</a>
             <a href="#figures" style={{ color: '#8b94a3' }} className="hover:text-white transition-colors">Figures</a>
             <a href="#datasets" style={{ color: '#8b94a3' }} className="hover:text-white transition-colors">Datasets</a>
+            <a href="#input" style={{ color: '#8b94a3' }} className="hover:text-white transition-colors">Input</a>
             <a href="#resources" style={{ color: '#8b94a3' }} className="hover:text-white transition-colors">Resources</a>
           </nav>
           <a
@@ -1638,9 +1640,16 @@ export default function App() {
       </section>
 
       {/* RESOURCES */}
+      <section id="input" className="relative" style={{ borderBottom: '1px solid #1f242c' }}>
+        <div className="max-w-7xl mx-auto px-6 py-20">
+          <SectionLabel number="11" title="Input and preprocessing" />
+          <PreprocessingDemo />
+        </div>
+      </section>
+
       <section id="resources" className="relative" style={{ borderBottom: '1px solid #1f242c' }}>
         <div className="max-w-7xl mx-auto px-6 py-20">
-          <SectionLabel number="11" title="Get it" />
+          <SectionLabel number="12" title="Get it" />
           <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-4 mb-12">
             <ResourceCard icon={Github} title="Code" description="Preprocessing pipelines, training scripts, inference utilities. All open source." href="https://github.com/AIM-KannLab/BrainIAC" primary />
             <ResourceCard icon={Globe} title="Platform" description="Upload a brain MRI, run BrainIAC and all seven downstream models in your browser." href="https://www.brainiac-platform.com/" />
