@@ -415,15 +415,32 @@ function ScanChecker() {
 
   const handleFile = useCallback(async (selected) => {
     if (!selected) return;
-    setError(null); setMetadata(null); setChecks(null); setFile(selected);
+
+    // Reset all state before parsing new file
+    setError(null);
+    setMetadata(null);
+    setChecks(null);
+    setFile(selected);
+
     if (!selected.name.endsWith('.nii') && !selected.name.endsWith('.nii.gz')) {
-      setError('Please select a .nii or .nii.gz file.'); return;
+      setError('Please select a .nii or .nii.gz file.');
+      return;
     }
     try {
       const meta = await parseNiftiHeader(selected);
-      setMetadata(meta); setChecks(checkScan(meta));
-    } catch (e) { setError(e.message || 'Failed to parse file'); }
+      setMetadata(meta);
+      setChecks(checkScan(meta));
+    } catch (e) {
+      setError(e.message || 'Failed to parse file');
+    }
   }, []);
+
+  // Reset input value so the same file can be re-selected
+  const handleFileInputChange = (e) => {
+    const f = e.target.files?.[0];
+    e.target.value = '';
+    handleFile(f);
+  };
 
   const onDrop = useCallback((e) => {
     e.preventDefault(); setDragOver(false);
@@ -456,7 +473,7 @@ function ScanChecker() {
         }}
       >
         <input ref={fileInputRef} type="file" accept=".nii,.nii.gz" style={{ display: 'none' }}
-               onChange={(e) => handleFile(e.target.files?.[0])} />
+               onChange={handleFileInputChange} />
         <Upload size={36} style={{ color: '#5b6472', margin: '0 auto 16px' }} />
         <div className="font-serif text-lg mb-2" style={{ color: '#f0f2f5' }}>
           {dragOver ? 'Drop the file here' : 'Drag and drop a NIfTI file'}
